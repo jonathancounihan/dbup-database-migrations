@@ -1,0 +1,16 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="CopySqlScripts" AfterTargets="Build">
+        <Message Text="***** DBMigrate: Start Copy Sql Scripts *****" Importance="High" />
+        <ItemGroup>
+            <MainDBScriptFiles Include="$(ProjectDir)\DatabaseScripts\MainDB\**\*.*" />
+        </ItemGroup>
+        <PropertyGroup>
+            <DBScriptsOutput>$(TargetDir)SqlScripts</DBScriptsOutput>
+        </PropertyGroup>
+        <Message Text="Clearing output folder: $(DBScriptsOutput)" Importance="High" />
+        <RemoveDir Directories="$(DBScriptsOutput)" />
+        <Message Text="Copying SQL files to output folder..." Importance="High" />
+        <Copy SourceFiles="@(MainDBScriptFiles)" DestinationFiles="@(MainDBScriptFiles->'$(DBScriptsOutput)\MainDB\%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+        <Message Text="***** DBMigrate: Finish Copy Sql Scripts *****" Importance="High" />
+    </Target>
+</Project>

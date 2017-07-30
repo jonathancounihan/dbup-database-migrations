@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDBMigrations.Web", "SampleDBMigrations.Web\SampleDBMigrations.Web.csproj", "{DE48F812-BEDE-4363-8C94-E1E7779F901C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBMigrate", "DBMigrate\DBMigrate.csproj", "{3D428BED-DA3F-4041-AAD7-58ADFB69BE6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE48F812-BEDE-4363-8C94-E1E7779F901C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE48F812-BEDE-4363-8C94-E1E7779F901C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE48F812-BEDE-4363-8C94-E1E7779F901C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE48F812-BEDE-4363-8C94-E1E7779F901C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D428BED-DA3F-4041-AAD7-58ADFB69BE6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D428BED-DA3F-4041-AAD7-58ADFB69BE6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D428BED-DA3F-4041-AAD7-58ADFB69BE6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D428BED-DA3F-4041-AAD7-58ADFB69BE6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
