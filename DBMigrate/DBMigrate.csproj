@@ -62,16 +62,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DatabaseScripts\MainDB\To Be Released\Script00001 - AddTable.sql" />
+    <None Include="DatabaseScripts\MainDB\2017\2017-11-20 - 0.0.0.1\Script00001 - AddTable.sql" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DatabaseScripts\MainDB\2017\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DatabaseScripts\MainDB\To Be Released\Script00002 - AddAnotherTable.sql" />
+    <None Include="DatabaseScripts\MainDB\2017\2017-11-20 - 0.0.0.1\Script00002 - AddAnotherTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseScripts\MainDB\To Be Released\Script00003 - AddANewTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DatabaseScripts\MainDB\vNext\Script00004 - AddTheNextTable.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildProjectDirectory)\Properties\DBMigrate.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
