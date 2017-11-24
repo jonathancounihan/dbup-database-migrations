@@ -1,0 +1,28 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="CopySqlScripts" BeforeTargets="Build">
+        <Message Text="***** Project: Start Copy Sql Scripts *****" Importance="High" />
+        <ItemGroup>
+            <MainDBScriptFiles Include="$(ProjectDir)..\DbMigrate\DatabaseScripts\MainDB\**\*.*" />
+            <LoggingDBScriptFiles Include="$(ProjectDir)..\DbMigrate\DatabaseScripts\LoggingDB\**\*.*" />
+        </ItemGroup>
+        <!--
+	    <Message Text="Input Files: %(DBScriptFiles.Identity)" Importance="High" />
+	    -->
+        <PropertyGroup>
+            <DBScriptsOutput>$(TargetDir)SqlScripts</DBScriptsOutput>
+        </PropertyGroup>
+        <MakeDir Directories="$(DBScriptsOutput)" />
+        <ItemGroup>
+            <FilesToClean Include="$(DBScriptsOutput)\**\*.*" />
+            <!-- Bit of .Net to get all folders and subfolders -->
+            <FoldersToClean Include="$([System.IO.Directory]::GetDirectories(&quot;$(DBScriptsOutput)&quot;))" />
+        </ItemGroup>
+        <Message Text="Clearing output folder: @(FoldersToClean)" Importance="High" />
+        <Delete Files="@(FilesToClean)" />
+        <RemoveDir Directories="@(FoldersToClean)" />
+        <Message Text="Copying SQL files to output folder..." Importance="High" />
+        <Copy SourceFiles="@(MainDBScriptFiles)" DestinationFiles="@(MainDBScriptFiles->'$(DBScriptsOutput)\MainDB\%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(LoggingDBScriptFiles)" DestinationFiles="@(LoggingDBScriptFiles->'$(DBScriptsOutput)\LoggingDB\%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+        <Message Text="***** Project: Finish Copy Sql Scripts *****" Importance="High" />
+    </Target>
+</Project>

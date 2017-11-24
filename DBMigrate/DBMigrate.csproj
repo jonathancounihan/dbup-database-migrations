@@ -64,15 +64,20 @@
   <ItemGroup>
     <None Include="DatabaseScripts\MainDB\2017\2017-11-20 - 0.0.0.1\Script00001 - AddTable.sql" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="DatabaseScripts\MainDB\vNext\Script00005 - UpdateTheUsedSPs.sql" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseScripts\MainDB\2017\2017-11-20 - 0.0.0.1\Script00002 - AddAnotherTable.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DatabaseScripts\MainDB\To Be Released\Script00003 - AddANewTable.sql" />
+    <None Include="DatabaseScripts\MainDB\2017\2017-11-24 - 0.0.0.2\Script00003 - AddANewTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseScripts\MainDB\vNext\Script00004 - AddTheNextTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DatabaseScripts\MainDB\To Be Released\" />
   </ItemGroup>
   <Import Project="$(MSBuildProjectDirectory)\Properties\DBMigrate.targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

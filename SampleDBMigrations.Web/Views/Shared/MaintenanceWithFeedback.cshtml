@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<title>Site Maintenance - Local</title>
+<style>
+    body {
+        text-align: center;
+        padding: 150px;
+        font: 20px Helvetica, sans-serif;
+        color: #333;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    article {
+        display: block;
+        text-align: left;
+        width: 650px;
+        margin: 0 auto;
+    }
+
+    a {
+        color: #dc8100;
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+</style>
+
+<article>
+    <h1>Did you forget to run the scripts again?!</h1>
+    <div>
+        <p>Run those scripts now!</p>
+    </div>
+    <form action="@Url.Action("UpdateDb", "MaintenanceMode")" method="post">
+        <table>
+            <tr>
+                <td>Upgrade Code:</td>
+                <td>
+                    <input id="UpgradeCode" name="UpgradeCode" type="password" value="ThisIsASecretCodeWhichIsUsuallyInTheWeb.config" />
+                </td>
+                <td align="right">
+                    <input type="submit" value="Start" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</article>
